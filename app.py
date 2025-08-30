@@ -978,21 +978,21 @@ def main():
                                 current_proc = proc_info["process"][current_step]
                                 process_info = f"<br><strong>Process:</strong> {current_proc['type']}"
 
-                    st.markdown(dedent(f"""
-                    <div class="battery-card {state_class}">
-                      <div class="battery-icon">{state_icon}</div>
-                      <h3>{battery_name}</h3>
-                      <div class="metric-card">
-                        <strong>Type:</strong> {battery_data["type"].upper()}<br>
-                        <strong>Voltage:</strong> {battery_data["voltage"]} V<br>
-                        <strong>SOC:</strong> {battery_data["soc"]}%<br>
-                        <strong>Temperature:</strong> {battery_data["temperature"]}°C<br>
-                        <strong>Power:</strong> {battery_data["power"]} W<br>
-                        <strong>State:</strong> <span class="status-{state}">{state.upper()}</span>
-                        {process_info}
-                      </div>
-                    </div>
-                    """), unsafe_allow_html=True)
+                    # st.markdown(dedent(f"""
+                    # <div class="battery-card {state_class}">
+                    #   <div class="battery-icon">{state_icon}</div>
+                    #   <h3>{battery_name}</h3>
+                    #   <div class="metric-card">
+                    #     <strong>Type:</strong> {battery_data["type"].upper()}<br>
+                    #     <strong>Voltage:</strong> {battery_data["voltage"]} V<br>
+                    #     <strong>SOC:</strong> {battery_data["soc"]}%<br>
+                    #     <strong>Temperature:</strong> {battery_data["temperature"]}°C<br>
+                    #     <strong>Power:</strong> {battery_data["power"]} W<br>
+                    #     <strong>State:</strong> <span class="status-{state}">{state.upper()}</span>
+                    #     {process_info}
+                    #   </div>
+                    # </div>
+                    # """), unsafe_allow_html=True)
 
                     if st.button(f"🔍 Analyze {battery_name}", key=f"analyze_{battery_name}"):
                         st.session_state.selected_battery = battery_name
@@ -1146,3 +1146,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
