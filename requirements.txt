@@ -1,6 +1,4 @@
-streamlit
-numpy
-pandas
+
 plotly
 random
 time
